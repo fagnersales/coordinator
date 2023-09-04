@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "coordinator",
+	"version": "${version}",
+	"name": "Coordinator",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Fagner Sales"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/coordinator/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.fagnersales.CoordinatorMod"
+		],
+		"client": [
+			"net.fagnersales.CoordinatorModClient"
+		]
+	},
+	"mixins": [
+		"coordinator.mixins.json",
+		{
+			"config": "coordinator.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
